@@ -23,3 +23,8 @@ target/
 local-test-server/
 1.zip
 2121.zip
+
+# Локальные конфиги с реальными токенами - НЕ коммитить
+*.local.yml
+config.LOKALNO-NE-PUSHIT.yml
+config-with-secrets.yml
