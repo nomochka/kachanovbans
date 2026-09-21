@@ -1,27 +1,27 @@
 # Основной конфиг плагина KachanovBans
-timezone: "Europe/Moscow"
+timezone: Europe/Moscow
 
 # Режим отладки (вывод подробной информации в консоль)
 debug: false
 
 # Тип хранилища
-storage-type: "mysql"
+storage-type: mysql
 
 # Отдельная MySQL-база KachBans для банов, мутов и истории
 mysql:
-  host: "localhost"
+  host: mariadb
   port: 3306
-  database: "kachanovbans"
-  user: "root"
+  database: vanilla_test
+  user: vanilla_test
   password: ""
   connect-timeout-seconds: 3
 
 check-interval: 1200
 pagination:
   items-per-page: 10
-  button-next: "<green>[→]</green>"
-  button-prev: "<green>[←]</green>"
-  button-close: "<red>[✕]</red>"
+  button-next: <green>[→]</green>
+  button-prev: <green>[←]</green>
+  button-close: <red>[✕]</red>
 silent-enabled: true
 
 privacy:
@@ -30,229 +30,225 @@ privacy:
 # Защита сотрудников. Ключи должны быть уникальными и не короче 8 символов.
 security:
   enabled: true
-  # Permission, по которому игрок считается сотрудником.
-  staff-permission: "kachanovbans.staff"
   session-minutes: 480
   same-ip-rejoin-minutes: 60
   stage-timeout-seconds: 60
   # Названия групп LuckPerms (проверяются как permission group.<группа>).
   staff-groups:
-    - help
-    - helper
-    - admin
-    - super_admin
-    - moderator
-    - mod
-    - moder
+  - help
+  - helper
+  - admin
+  - super_admin
+  - moderator
+  - mod
+  - moder
   require-discord-link: true
   require-discord-2fa: false
   require-access-key: false
   # Привязка
   discord-link-database:
     enabled: true
-    host: "127.0.0.1"
+    host: 127.0.0.1
     port: 3306
-    database: "velocity"
-    user: "root"
+    database: velocity
+    user: velocity
     password: ""
-    table: "granted_passes"
-    player-column: "player"
-    discord-id-column: "discord_id"
+    table: granted_passes
+    player-column: player
+    discord-id-column: discord_id
     connect-timeout-seconds: 3
     cache-seconds: 15
   access-keys:
-    AdminNick: "CHANGE-ME-ADMIN"
-    ModeratorNick: "CHANGE-ME-MODERATOR"
+    AdminNick: CHANGE-ME-ADMIN
+    ModeratorNick: CHANGE-ME-MODERATOR
   # Ключи по группам LuckPerms. Персональный ключ выше имеет приоритет.
   group-access-keys:
-    help: "CHANGE-ME"
-    helper: "CHANGE-ME"
-    moderator: "CHANGE-ME"
-    mod: "CHANGE-ME"
-    moder: "CHANGE-ME"
-    admin: "CHANGE-ME"
-    super_admin: "CHANGE-ME"
-
-# Старые /access, /2fa, /ds, /tg и встроенная /link оставлены в коде на будущее,
-# но полностью отключены. Внешняя Discord-привязка сотрудников продолжает
-# проверяться перед административными командами.
-legacy-auth:
-  enabled: false
+    help: CHANGE-ME
+    helper: CHANGE-ME
+    moderator: CHANGE-ME
+    mod: CHANGE-ME
+    moder: CHANGE-ME
+    admin: CHANGE-ME
+    super_admin: CHANGE-ME
+  staff-permission: kachanovbans.staff
 
 bots:
   superowner-discord-id: "PUT-SUPEROWNER-DISCORD-ID"
   allowed-discord-ids:
-    - "PUT-SUPEROWNER-DISCORD-ID"
+  - "PUT-SUPEROWNER-DISCORD-ID"
   superowner-telegram-id: "PUT-SUPEROWNER-TELEGRAM-ID"
   discord:
     enabled: true
     token: "PUT-YOUR-DISCORD-BOT-TOKEN-HERE"
-    guild-id: ""
-    senior-channel-id: ""
-    punishment-channel-id: ""
-    audit-channel-id: ""
+    guild-id: ''
+    senior-channel-id: ''
+    punishment-channel-id: ''
+    audit-channel-id: ''
   telegram:
     enabled: true
     token: "PUT-YOUR-TELEGRAM-BOT-TOKEN-HERE"
-    senior-chat-id: ""
-    punishment-chat-id: ""
+    senior-chat-id: ''
+    punishment-chat-id: ''
     punishment-thread-id: 0
-    audit-chat-id: ""
+    audit-chat-id: ''
     audit-thread-id: 0
 
 evidence:
   enabled: true
   timeout-minutes: 60
 
-confirmations:
-  timeout-seconds: 120
-
-# Аудит административных команд в канале /setbotlogs.
-# Указывается только корень команды без начального слеша.
-command-audit:
-  enabled: true
-  commands:
-    - gm
-    - gamemode
-    - gmc
-    - gms
-    - gma
-    - gmsp
-    - co
-    - coreprotect
-    - tp
-    - teleport
-    - tphere
-    - tpall
-    - eco
-    - economy
-    - give
-    - clear
-    - op
-    - deop
-    - lp
-    - luckperms
-    - pex
-    - permissions
-    - whitelist
-    - stop
-    - restart
-    - reload
-    - rl
-    - execute
-    - sudo
-    - kill
-    - summon
-    - setblock
-    - fill
-    - worldedit
-    - we
-
-# Наблюдение за серверными voice-мутами Plasmo Voice.
-voice-mute-audit:
-  enabled: true
-  mute-commands: [pvmute, vmute]
-  unmute-commands: [pvunmute, vunmute]
-
-# Пункты предупреждений. Ключ пункта — аргумент команды /warn (латиница, до 15 символов).
-# Доступные действия: tempban, ban, tempmute, mute, kick, none.
-# Для временных действий обязательно укажите duration: 1d / 3d / 14d / 12h и т.п.
-# Если число активных варнов больше последней ступени, повторяется последняя ступень.
+# Совместимые настройки доступа Telegram.
+telegramSuperOwnerId: "PUT-SUPEROWNER-TELEGRAM-ID"
+telegramAdminChatIds:
+- "PUT-TELEGRAM-ADMIN-CHAT-ID"
+telegramBootstrapChatTitle: ''
+telegramNotificationChatIds:
+- "PUT-TELEGRAM-ADMIN-CHAT-ID"
+telegramAllowRawCommands: true
+telegramRawCommandUsernames:
+- your_telegram_username
+# Только неизменяемые цифровые ID. Username не используется для авторизации.
+telegramAllowedUserIds: []
 warnings:
   enabled: true
   categories:
     autofarm:
-      display-name: "Автоферма"
+      display-name: Автоферма
       expire-days: 30
       steps:
-        1:
+        '1':
           action: tempban
-          duration: "1d"
-        2:
+          duration: 1d
+        '2':
           action: tempban
-          duration: "3d"
-        3:
+          duration: 3d
+        '3':
           action: tempban
-          duration: "14d"
-        4:
+          duration: 14d
+        '4':
           action: ban
     family-insult:
-      display-name: "Оскорбление родных"
+      display-name: Оскорбление родных
       expire-days: 30
       steps:
-        1:
+        '1':
           action: tempmute
-          duration: "1d"
-        2:
+          duration: 1d
+        '2':
           action: tempban
-          duration: "1d"
-        3:
+          duration: 1d
+        '3':
           action: tempban
-          duration: "3d"
-
-# Чёрный ник: отдельное наказание с тяжёлым заданием.
-# Пока задание не выполнено, ник игрока чёрный над головой,
-# урезано здоровье, заблокированы команды и почти не выпадают ресурсы.
+          duration: 3d
+legacy-auth:
+  enabled: false
+confirmations:
+  timeout-seconds: 120
+command-audit:
+  enabled: true
+  commands:
+  - gm
+  - gamemode
+  - gmc
+  - gms
+  - gma
+  - gmsp
+  - co
+  - coreprotect
+  - tp
+  - teleport
+  - tphere
+  - tpall
+  - eco
+  - economy
+  - give
+  - clear
+  - op
+  - deop
+  - lp
+  - luckperms
+  - pex
+  - permissions
+  - whitelist
+  - stop
+  - restart
+  - reload
+  - rl
+  - execute
+  - sudo
+  - kill
+  - summon
+  - setblock
+  - fill
+  - worldedit
+  - we
+voice-mute-audit:
+  enabled: true
+  mute-commands:
+  - pvmute
+  - vmute
+  unmute-commands:
+  - pvunmute
+  - vunmute
 blacknick:
   enabled: true
-  # Сколько сердец остаётся игроку (4 сердца = 8 HP).
   hearts: 4
-  # Объявлять выдачу и снятие в общий чат.
   broadcast: true
-  # Красить ник над головой через scoreboard-команду kb_blacknick.
   color-name-above-head: false
-  # Показывать прогресс задания в actionbar.
   actionbar: true
-  # Сохранять прогресс в базу раз в N шагов, чтобы не писать на каждый блок.
   progress-save-every: 25
-  # Блоки, которые всё ещё дают дроп. Остальное ломается впустую.
   drop-whitelist:
-    - DIRT
-    - GRASS_BLOCK
-    - COARSE_DIRT
-    - ROOTED_DIRT
-    - STONE
-    - COBBLESTONE
-  # Разрешённые команды. Всё остальное блокируется. /blacknick разрешена всегда.
+  - DIRT
+  - GRASS_BLOCK
+  - COARSE_DIRT
+  - ROOTED_DIRT
+  - STONE
+  - COBBLESTONE
   allowed-commands:
-    - msg
-    - m
-    - tell
-    - w
-    - r
-    - reply
-  # Задания. Ключ — аргумент команды /blacknick (латиница).
-  # Типы: break (материалы), fish (без цели), kill (мобы).
+  - msg
+  - m
+  - tell
+  - w
+  - r
+  - reply
+  - search
+  - donate
   tasks:
     obsidian:
-      display-name: "Скопать 2000 обсидиана"
+      display-name: Скопать 15000 обсидиана
       type: break
-      materials: [OBSIDIAN, CRYING_OBSIDIAN]
-      amount: 2000
+      materials:
+      - OBSIDIAN
+      - CRYING_OBSIDIAN
+      amount: 15000
     stone:
-      display-name: "Скопать 10000 камня"
+      display-name: Скопать 1000000 камня
       type: break
-      materials: [STONE, DEEPSLATE]
-      amount: 10000
+      materials:
+      - STONE
+      - DEEPSLATE
+      amount: 1000000
+    maiki:
+      display-name: Сломать 25 Маяков
+      type: break
+      materials:
+      - BEACON
+      amount: 25
     fish:
-      display-name: "Выловить 10000 рыбы"
+      display-name: Выловить 30000 рыбы
       type: fish
-      amount: 10000
+      amount: 30000
     zombies:
-      display-name: "Убить 5000 зомби"
+      display-name: Убить 9000 зомби
       type: kill
-      entities: [ZOMBIE, HUSK, DROWNED]
-      amount: 5000
-
-# Совместимые настройки доступа Telegram.
-telegramSuperOwnerId: "PUT-SUPEROWNER-TELEGRAM-ID"
-telegramAdminChatIds:
-  - "PUT-TELEGRAM-ADMIN-CHAT-ID"
-telegramBootstrapChatTitle: ""
-telegramNotificationChatIds:
-  - "PUT-TELEGRAM-ADMIN-CHAT-ID"
-telegramAllowRawCommands: true
-telegramRawCommandUsernames:
-  - "your_telegram_username"
-# Только неизменяемые цифровые ID. Username не используется для авторизации.
-telegramAllowedUserIds: []
+      entities:
+      - ZOMBIE
+      - HUSK
+      - DROWNED
+      amount: 9000
+    pigs:
+      display-name: Убить 70000 свиней
+      type: kill
+      entities:
+      - PIG
+      amount: 70000
