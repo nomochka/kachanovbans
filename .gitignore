@@ -1,0 +1,25 @@
+# Maven
+target/
+*.class
+
+# Packages
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# Local stuff - не пушить мусор
+.deploy/
+.m2-build/
+.m2-task/
+local-test-server/
+1.zip
+2121.zip

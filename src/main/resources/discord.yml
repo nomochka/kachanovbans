@@ -1,0 +1,194 @@
+# Настройки Discord вебхука с поддержкой embed
+webhook:
+  enabled: false
+  url: "https://discord.com/api/webhooks/ваш_ид/ваш_токен"
+  username: "KachanovBans"
+  avatar_url: "https://example.com/avatar.png"
+  default_color: 0xFF5500
+
+  embeds:
+    ban:
+      title: "🚫 Бан (навсегда)"
+      color: 0xFF0000
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    tempban:
+      title: "⏳ Временный бан"
+      color: 0xFF5500
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "До"
+          value: "{expiry}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    unban:
+      title: "✅ Разбан"
+      color: 0x00FF00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Снято {time}"
+
+    mute:
+      title: "🔇 Мут (навсегда)"
+      color: 0xFFFF00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    tempmute:
+      title: "⏳ Временный мут"
+      color: 0xFFAA00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "На"
+          value: "{duration}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    unmute:
+      title: "✅ Размут"
+      color: 0x00FF00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Снято {time}"
+
+    ipban:
+      title: "🌐 IP-бан (навсегда)"
+      color: 0x990000
+      fields:
+        - name: "IP-адрес"
+          value: "{ip}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    tempipban:
+      title: "⏳ Временный IP-бан"
+      color: 0xCC5500
+      fields:
+        - name: "IP-адрес"
+          value: "{ip}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "До"
+          value: "{expiry}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    ipunban:
+      title: "✅ Снятие IP-бана"
+      color: 0x00FF00
+      fields:
+        - name: "IP-адрес"
+          value: "{ip}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Снято {time}"
+
+    ban_extend:
+      title: "⏳ Срок бана продлён"
+      color: 0xFFAA00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Новый срок до"
+          value: "{new_expiry}"
+          inline: true
+        - name: "Добавлено"
+          value: "{added_duration}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"
+
+    mute_extend:
+      title: "⏳ Срок мута продлён"
+      color: 0xFFAA00
+      fields:
+        - name: "Игрок"
+          value: "{player}"
+          inline: true
+        - name: "Модератор"
+          value: "{moderator}"
+          inline: true
+        - name: "Добавлено"
+          value: "{added_duration}"
+          inline: true
+        - name: "Новое время"
+          value: "{new_remaining}"
+          inline: true
+        - name: "Причина"
+          value: "{reason}"
+          inline: false
+      footer: "Выдано {time}"

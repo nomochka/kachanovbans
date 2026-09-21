@@ -1,0 +1,148 @@
+prefix: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray>"
+
+general:
+  no-permission: "<red>Недостаточно прав.</red>"
+  invalid-arguments: "<gray>Использование:</gray> <white>{0}</white>"
+  invalid-player: "<gray>Игрок</gray> <white>{0}</white> <gray>не найден.</gray>"
+  reloaded: "<green>Конфигурация перезагружена.</green>"
+
+kick:
+  self-kick: "<red>Нельзя кикнуть самого себя.</red>"
+  success: "<green>{0} исключён с сервера.</green>"
+  kick-message: "<red>Вы исключены с сервера</red>\n\n<gray>Причина:</gray> <white>{0}</white>\n<gray>Модератор:</gray> <white>{1}</white>"
+  moderator-broadcast: "<white>{0}</white> <gray>кикнул</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+
+warn:
+  unknown-category: "<red>Неизвестный пункт.</red> <gray>Доступно:</gray> <white>{0}</white>"
+  success: "<green>Варн для {0} выдан.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>выдал варн</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+
+unwarn:
+  unknown-category: "<red>Неизвестный пункт.</red> <gray>Доступно:</gray> <white>{0}</white>"
+  not-found: "<gray>У</gray> <white>{0}</white> <gray>нет активного варна по пункту</gray> <white>{1}</white><gray>.</gray>"
+  success: "<green>Варн {0} по пункту {1} снят.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>снял варн с</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}: {3}</gray>"
+
+ban:
+  kick-message: "<red>Доступ заблокирован</red>\n\n<gray>Причина:</gray> <white>{2}</white>\n<gray>До:</gray> <white>{1}</white>"
+  moderator-broadcast: "<white>{0}</white> <gray>забанил</gray> <white>{1}</white> <gray>навсегда</gray> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+  moderator-tempbroadcast: "<white>{0}</white> <gray>забанил</gray> <white>{1}</white> <gray>до</gray> <white>{2}</white> <dark_gray>·</dark_gray> <gray>{3}</gray>"
+  self-ban: "<red>Нельзя забанить самого себя.</red>"
+  already-banned: "<white>{0}</white> <gray>уже заблокирован.</gray>"
+  ban-success: "<green>{0} заблокирован навсегда.</green>"
+  tempban-success: "<green>{0} заблокирован до {1}.</green>"
+  invalid-time: "<red>Неверный срок.</red> <gray>Пример:</gray> <white>30m, 12h, 7d</white>"
+  expired: "<green>Срок блокировки закончился.</green>"
+
+unban:
+  not-banned: "<white>{0}</white> <gray>не заблокирован.</gray>"
+  success: "<green>Блокировка {0} снята.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>разбанил</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+
+mute:
+  self-mute: "<red>Нельзя выдать мут самому себе.</red>"
+  already-muted: "<white>{0}</white> <gray>уже получил мут.</gray>"
+  success: "<green>{0} получил мут навсегда.</green>"
+  tempmute-success: "<green>{0} получил мут на {1}.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>выдал мут</gray> <white>{1}</white> <gray>навсегда</gray> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+  moderator-tempbroadcast: "<white>{0}</white> <gray>выдал мут</gray> <white>{1}</white> <gray>на</gray> <white>{2}</white> <dark_gray>·</dark_gray> <gray>{3}</gray>"
+  target-muted: "<#ff5c5c>⦸</#ff5c5c> <gray>Вы получили мут навсегда. Причина:</gray> <white>{2}</white>"
+  target-tempmuted: "<#ff5c5c>⦸</#ff5c5c> <gray>Вы получили мут на</gray> <white>{1}</white><gray>. Причина:</gray> <white>{2}</white>"
+  muted-chat: "<#ff5c5c>⦸</#ff5c5c> <gray>Вы сможете писать через</gray> <white>{0}</white>"
+  muted-chat-permanent: "<#ff5c5c>⦸</#ff5c5c> <gray>Вы не можете писать: мут выдан навсегда.</gray>"
+  expired: "<green>Чат снова доступен.</green>"
+
+unmute:
+  not-muted: "<white>{0}</white> <gray>не имеет активного мута.</gray>"
+  success: "<green>Мут с {0} снят.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>снял мут с</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+
+ipban:
+  kick-message: "<red>Доступ заблокирован</red>\n\n<gray>Адрес:</gray> <white>{0}</white>\n<gray>До:</gray> <white>{1}</white>\n<gray>Причина:</gray> <white>{2}</white>"
+  success: "<green>IP {0} заблокирован навсегда.</green>"
+  tempipban-success: "<green>IP {0} заблокирован до {1}.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>заблокировал IP</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+  moderator-tempbroadcast: "<white>{0}</white> <gray>заблокировал IP</gray> <white>{1}</white> <gray>до</gray> <white>{2}</white> <dark_gray>·</dark_gray> <gray>{3}</gray>"
+
+ipunban:
+  not-ipbanned: "<gray>IP</gray> <white>{0}</white> <gray>не заблокирован.</gray>"
+  success: "<green>Блокировка IP {0} снята.</green>"
+  moderator-broadcast: "<white>{0}</white> <gray>разблокировал IP</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2}</gray>"
+
+banlist:
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>Активные баны · {0}/{1}</gray>"
+  entry: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · до {3} · {4}</gray>"
+  entry-permanent: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · навсегда · {3}</gray>"
+  empty: "<gray>Активных банов нет.</gray>"
+
+mutelist:
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>Активные муты · {0}/{1}</gray>"
+  entry: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · {3} · {4}</gray>"
+  entry-permanent: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · навсегда · {3}</gray>"
+  empty: "<gray>Активных мутов нет.</gray>"
+
+vmutelist:
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>Voice-муты · {0}/{1}</gray>"
+  entry: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · до {2} · {3}</gray>"
+  entry-permanent: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1} · навсегда · {3}</gray>"
+  empty: "<gray>Активных voice-мутов нет.</gray>"
+  unavailable: "<red>Plasmo Voice недоступен.</red>"
+
+history:
+  unknown-player: "<gray>Игрок</gray> <white>{0}</white> <gray>не найден.</gray>"
+  empty: "<gray>История наказаний пуста.</gray>"
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>История {0} · {1}/{2}</gray>"
+  entry: "<dark_gray>•</dark_gray> <gray>{0}</gray> <white>{1}</white> <gray>· {2} · {3} · {4}</gray>"
+
+iphistory:
+  unknown-player: "<gray>Игрок</gray> <white>{0}</white> <gray>не найден.</gray>"
+  empty: "<gray>История IP пуста.</gray>"
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>IP-история {0} · {1}/{2}</gray>"
+  entry: "<dark_gray>•</dark_gray> <white>{0}</white> <gray>· {1}—{2}</gray>"
+
+dupeip:
+  unknown-player: "<gray>Игрок</gray> <white>{0}</white> <gray>не найден.</gray>"
+  empty: "<gray>Связанных аккаунтов нет.</gray>"
+  header: "<gradient:#8B5CF6:#22D3EE>KachBans</gradient> <dark_gray>›</dark_gray> <gray>Аккаунты {0} · {1}/{2}</gray>"
+  entry: "<dark_gray>•</dark_gray> <white>{0}</white>"
+
+checkmute:
+  not-muted: "<white>{0}</white> <gray>не имеет активного мута.</gray>"
+  muted: "<gold>Мут: {0}</gold>\n<gray>{1} · {3} · {4}</gray>\n<white>{2}</white>"
+
+checkvmute:
+  not-muted: "<white>{0}</white> <gray>не имеет активного voice-мута.</gray>"
+  muted: "<aqua>Voice-мут: {0}</aqua>\n<gray>{1} · {3} · {4}</gray>\n<white>{2}</white>"
+
+checkban:
+  not-banned: "<white>{0}</white> <gray>не заблокирован.</gray>"
+  banned: "<red>Бан: {0}</red>\n<gray>{1} · {3} · {4}</gray>\n<white>{2}</white>"
+
+blacknick:
+  disabled: "<red>Чёрные ники отключены в конфиге.</red>"
+  self: "<red>Нельзя выдать чёрный ник самому себе.</red>"
+  unknown-task: "<red>Неизвестное задание.</red> <gray>Доступно:</gray> <white>{0}</white>"
+  already: "<gray>У</gray> <white>{0}</white> <gray>уже висит чёрный ник.</gray>"
+  not-found: "<white>{0}</white> <gray>без чёрного ника.</gray>"
+  success: "<green>Чёрный ник выдан {0}.</green> <gray>Задание:</gray> <white>{1}</white>"
+  moderator-broadcast: "<white>{0}</white> <gray>выдал чёрный ник</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{2} ({3})</gray>"
+  target-applied: "<black>◼</black> <gray>Вам выдан чёрный ник — он виден над вашей головой.</gray>\n<gray>Задание:</gray> <white>{0}</white> <gray>×</gray> <white>{1}</white>\n<gray>Причина:</gray> <white>{2}</white>\n<gray>Здоровье урезано до</gray> <white>{3}</white> <gray>сердец. Команды и дроп ограничены до выполнения задания.</gray>"
+  progress: "<gray>Чёрный ник</gray> <white>{0}</white>\n<gray>Задание:</gray> <white>{1}</white>\n<gray>Прогресс:</gray> <white>{2}</white><gray>/</gray><white>{3}</white> <gray>· осталось</gray> <white>{4}</white>\n<gray>Выдан:</gray> <white>{5}</white> <gray>·</gray> <white>{6}</white>"
+  actionbar: "<black>◼</black> <gray>{0}:</gray> <white>{1}</white><gray>/</gray><white>{2}</white> <dark_gray>·</dark_gray> <gray>осталось</gray> <white>{3}</white>"
+  command-blocked: "<red>Команды заблокированы чёрным ником.</red> <gray>Выполните задание:</gray> <white>{0}</white>"
+  completed: "<green>Задание выполнено, чёрный ник снят.</green> <gray>{0}</gray>"
+  completed-broadcast: "<white>{1}</white> <gray>выполнил задание</gray> <white>{2}</white> <gray>и снял чёрный ник.</gray>"
+
+unblacknick:
+  not-found: "<white>{0}</white> <gray>без чёрного ника.</gray>"
+  success: "<green>Чёрный ник с {0} снят.</green>"
+  target-removed: "<green>Чёрный ник снят.</green> <gray>{0}</gray>"
+  moderator-broadcast: "<white>{0}</white> <gray>снял чёрный ник с</gray> <white>{1}</white> <dark_gray>·</dark_gray> <gray>{3}</gray>"
+
+confirm:
+  replace: "<green>[Заменить]</green>"
+  add: "<gold>[Добавить срок]</gold>"
+  header: "<gray>У</gray> <white>{0}</white> <gray>уже есть наказание ({1}). Что сделать?</gray>"
+  done: "<green>Наказание обновлено: {0}.</green>"
+  cancelled: "<red>Действие отменено.</red>"
+  error: "<red>Запрос не найден или уже устарел.</red>"

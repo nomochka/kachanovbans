@@ -1,0 +1,157 @@
+name: KachanovBans
+version: 1.0.0
+main: dendzyhype.kachanovBans.KachanovBans
+api-version: 1.21
+folia-supported: true
+depend: [LuckPerms]
+softdepend: [PlasmoVoice]
+
+commands:
+  warn:
+    description: Выдать предупреждение по пункту из конфига
+    permission: kachanovbans.warn
+  unwarn:
+    description: Снять один активный варн указанного пункта
+    permission: kachanovbans.unwarn
+  staffhistory:
+    description: История наказаний, выданных сотрудником
+    permission: kachanovbans.staffhistory
+  kick:
+    description: Исключить игрока с сервера
+    permission: kachanovbans.kick
+  ban:
+    description: Забанить игрока навсегда
+    permission: kachanovbans.ban
+  tempban:
+    description: Забанить игрока на время
+    permission: kachanovbans.tempban
+  unban:
+    description: Разбанить игрока
+    permission: kachanovbans.unban
+    aliases: [pardon]
+  mute:
+    description: Замутить игрока навсегда
+    permission: kachanovbans.mute
+  tempmute:
+    description: Замутить игрока на время
+    permission: kachanovbans.tempmute
+  unmute:
+    description: Размутить игрока
+    permission: kachanovbans.unmute
+  ipban:
+    description: Забанить IP-адрес навсегда
+    permission: kachanovbans.ipban
+    aliases: [banip, ban-ip]
+  tempipban:
+    description: Забанить IP-адрес на время
+    permission: kachanovbans.tempipban
+  ipunban:
+    description: Снять IP-бан
+    permission: kachanovbans.ipunban
+    aliases: [unbanip, pardon-ip]
+  banlist:
+    description: Список забаненных
+    permission: kachanovbans.banlist
+  mutelist:
+    description: Список замученных
+    permission: kachanovbans.mutelist
+  vmutelist:
+    description: Список активных voice-мутов Plasmo Voice
+    permission: kachanovbans.vmutelist
+  history:
+    description: История наказаний игрока
+    permission: kachanovbans.history
+  iphistory:
+    description: IP-история игрока
+    permission: kachanovbans.iphistory
+  dupeip:
+    description: Аккаунты с одним IP
+    permission: kachanovbans.dupeip
+  checkmute:
+    description: Проверить статус мута игрока
+    permission: kachanovbans.checkmute
+  checkvmute:
+    description: Проверить статус voice-мута игрока
+    permission: kachanovbans.checkvmute
+  checkban:
+    description: Проверить статус бана игрока
+    permission: kachanovbans.checkban
+  blacknick:
+    description: Выдать чёрный ник с заданием или посмотреть прогресс
+  unblacknick:
+    description: Снять чёрный ник
+    permission: kachanovbans.unblacknick
+  punishconfirm:
+    description: Подтверждение замены/добавления наказания
+    permission: kachanovbans.confirm
+  kachanovbans:
+    description: Управление KachBans и миграция Essentials
+    permission: kachanovbans.reload
+  access:
+    description: Ввод персонального ключа доступа
+    usage: /access <ключ>
+  ds:
+    description: Привязка Discord
+    usage: /ds add <код из Discord-бота>
+  tg:
+    description: Привязка Telegram
+    usage: /tg add <Telegram ID>
+  2fa:
+    description: Discord 2FA
+    usage: /2fa on|off|status
+
+permissions:
+  kachanovbans.*:
+    description: Все права
+    children:
+      kachanovbans.warn: true
+      kachanovbans.unwarn: true
+      kachanovbans.staffhistory: true
+      kachanovbans.kick: true
+      kachanovbans.ban: true
+      kachanovbans.tempban: true
+      kachanovbans.unban: true
+      kachanovbans.mute: true
+      kachanovbans.tempmute: true
+      kachanovbans.unmute: true
+      kachanovbans.ipban: true
+      kachanovbans.tempipban: true
+      kachanovbans.ipunban: true
+      kachanovbans.banlist: true
+      kachanovbans.mutelist: true
+      kachanovbans.vmutelist: true
+      kachanovbans.history: true
+      kachanovbans.iphistory: true
+      kachanovbans.dupeip: true
+      kachanovbans.checkmute: true
+      kachanovbans.checkvmute: true
+      kachanovbans.checkban: true
+      kachanovbans.blacknick: true
+      kachanovbans.unblacknick: true
+      kachanovbans.confirm: true
+      kachanovbans.reload: true
+      kachanovbans.staff: true
+  kachanovbans.blacknick:
+    description: Выдавать чёрный ник
+    default: false
+  kachanovbans.unblacknick:
+    description: Снимать чёрный ник
+    default: false
+  kachanovbans.staff:
+    description: Отметить игрока как сотрудника KachBans
+    default: false
+  kachbans.blacknick.exempt:
+    description: Не получать чёрный ник и игнорировать его ограничения
+    default: false
+  kachbans.evidence.bypass:
+    description: Использовать флаг -a для выдачи наказания без доказательств
+    default: false
+  kachbans.punishment.protected:
+    description: Полная защита игрока от кика, мута, бана и IP-бана
+    default: false
+  kachbans.silent:
+    description: Использовать флаг -s для скрытой выдачи и снятия наказаний
+    default: false
+  kachbans.webhook.bypass:
+    description: Не публиковать выданные сотрудником наказания в каналах ботов
+    default: false
